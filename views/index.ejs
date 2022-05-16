@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <title>Weather Forecast</title>
+</head>
+
+<body>
+  
+  <div class="box">
+    <div class="wave -one"></div>
+    <div class="wave -two"></div>
+    <div class="wave -three"></div>
+
+    <div id="weathercon">
+      <i class="fa-solid fa-sun" style="color: #eccc68;"> </i>
+    </div>
+    <form class="search" action="/showweather"  method="post">
+      <input class="sea" type="text" name="city" placeholder="Enter City">
+      <button>
+      <input type="submit">
+      </button>
+      </form>
+    <%if(handle===true){%>
+      <div class="info">
+        <h2 class="location"><i class="fa-solid fa-street-view"></i>City:<%=details.city%></h2>
+        <p id="date"> Date:<%=details.date%></p>
+        <h1 class="temp">Temp:<%=details.temperature%></h1>
+        <h3 class="temp_min_max">Min <%=details.min%> | Max <%=details.max%></h3>
+
+      </div>
+
+        <%}else{%>
+      <h3 class="null">No Data Present</h3>
+    <%}%>
+  </div>
+
+  <script src="../javascripts/script.js"></script>
+</body>
+
+</html>
